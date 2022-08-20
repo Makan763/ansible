@@ -1,0 +1,10 @@
+- hosts: dockerhost
+  become: yes
+  tasks:
+  - debug:
+      msg: "Before running role"
+  - include_role:
+      name: folder_install_package 
+  - debug:
+     msg: "After running role"
+
