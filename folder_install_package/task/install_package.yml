@@ -1,13 +1,11 @@
-- hosts: dockerhost
-  become: yes
-  tasks:
+---
+tasks:
 
   - name: Installation des packages
     yum:
-      name: 
-      - java
-      - tar
-      - unzip
-      state: present
+      name: "{{item.name}}"
+      state: "{{ item.state }}"
+      downloads_only: "{{ item.etat | default('yes') }}"
+    with_items: "{{ packages }}"
 
 

@@ -1,0 +1,4 @@
+---
+- include_vars: name_package.yml
+- import_tasks: install_package.yml
+

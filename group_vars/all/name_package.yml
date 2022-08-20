@@ -1,0 +1,14 @@
+---
+packages:
+  - name: java
+    state: present
+
+  - name: tar
+    state: present
+
+  - name: unzip
+    state: present
+
+  - name: httpd
+    state: present
+
