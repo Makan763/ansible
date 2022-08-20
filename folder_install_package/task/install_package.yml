@@ -1,0 +1,13 @@
+- hosts: dockerhost
+  become: yes
+  tasks:
+
+  - name: Installation des packages
+    yum:
+      name: 
+      - java
+      - tar
+      - unzip
+      state: present
+
+
