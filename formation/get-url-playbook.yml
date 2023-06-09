@@ -1,0 +1,10 @@
+- hosts: servers
+  tasks:
+  - name: Téléchargement
+    get_url:
+      url: https://www.temporary-url.com/0662
+      dest: /tmp/test-get-url
+      owner: root
+      group: root
+      mode: 0644
+    become: yes

@@ -1,0 +1,5 @@
+---
+mongodb_admin_db: admin
+mongodb_root_login: root
+mongodb_root_password: formation123
+default_mongodb_port: 27017

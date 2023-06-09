@@ -1,0 +1,4 @@
+
+package_name: apache2
+package_version: latest
+config_dest_file: /home/ubuntu/etc/apache2/

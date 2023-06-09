@@ -1,0 +1,41 @@
+---
+- name: Update repository cache
+  command: sudo apt-get update -y
+  become: yes
+
+- name: Install mongoDB
+  apt: 
+    name: mongodb
+    state: present
+    update_cache: yes
+  become: yes
+
+- name: Install pymongo
+  pip: name=pymongo
+  become: yes
+
+- name: update mongodb config
+  template:
+    src: ../templates/mongod.conf.j2
+    dest: /etc/mongod.conf
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
+
+- name: Ensure mongodb is restarted
+  service:
+    name: mongodb
+    state: restarted
+  become: yes
+
+- mongodb_user:
+    database: "{{ mongodb_admin_db }}"
+    name: "{{ mongodb_root_login }}"
+    password: "{{ mongodb_root_password }}"
+    roles: root
+    state: present
+
+
+

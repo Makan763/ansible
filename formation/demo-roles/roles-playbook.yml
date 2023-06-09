@@ -1,0 +1,10 @@
+---
+- hosts: servers
+  tasks:
+  - debug:
+      msg: "Before running role"
+  - include_role:
+      name: apache
+  - debug:
+     msg: "After running role"
+

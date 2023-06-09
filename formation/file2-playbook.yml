@@ -1,0 +1,10 @@
+- hosts: servers
+  tasks:
+    - name: create /tmp/testdir
+      file:
+          path: /tmp/testdir
+          state: directory
+          owner: root
+          group: root
+          mode: 0555
+      become: yes

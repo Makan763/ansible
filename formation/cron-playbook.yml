@@ -1,0 +1,9 @@
+- hosts: servers
+  tasks:
+  - name: Ensure a job that runs at 2 and 5 exists.
+    ansible.builtin.cron:
+      name: "check dirs"
+      minute: "0"
+      hour: "5,2"
+      job: "ls -alh > /dev/null"
+      state: absent

@@ -1,0 +1,8 @@
+- hosts: all
+  vars:
+    var2: "Hello"
+  tasks:
+    - name: Display defined when var1 is defined
+      debug:
+        msg: "Defined"
+      when: "var1 is defined"

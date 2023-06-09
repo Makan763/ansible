@@ -1,0 +1,12 @@
+- hosts: all
+  tasks:
+
+    - name: display apache vezrsion
+      local_action: command /usr/sbin/apache2 -v
+      delegate_to: 54.144.99.144
+
+    - name: install apache
+      apt:
+        name: apache2
+        state: latest
+

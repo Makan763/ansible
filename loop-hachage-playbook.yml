@@ -1,0 +1,10 @@
+- hosts: servers
+  tasks:
+    - name: Restart services
+      service:
+       name: "{{ item.name }}"
+       state: restarted
+      loop:
+        - { name: 'apache2' }
+        - { name: 'uuidd' }
+

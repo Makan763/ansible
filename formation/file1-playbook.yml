@@ -1,0 +1,10 @@
+- hosts: servers
+  tasks:
+    - file:
+        path: /tmp/testfile
+        state: file
+        mode: 0755
+        modification_time: now
+        access_time: now
+      become: yes
+

@@ -1,0 +1,20 @@
+- hosts: servers
+  remote_user: ubuntu
+  tasks:
+    - name: install apache
+      apt:
+        name: apache2
+        state: present
+      become: true
+      become_user: ubuntu
+
+    - name: display apache version
+      command: /usr/sbin/apache2 -v
+      become_user: ubuntu
+
+    - name: Restart apache
+      service:
+        name: apache2
+        state: restarted
+      become: yes
+      become_method: sudo

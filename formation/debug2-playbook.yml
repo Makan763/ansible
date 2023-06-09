@@ -1,0 +1,8 @@
+- hosts: servers
+  tasks:
+    - shell: /usr/bin/uptime
+      register: uptime_var
+      
+    - debug:
+        var: uptime_var
+        verbosity: 1

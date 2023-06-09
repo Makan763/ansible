@@ -1,0 +1,9 @@
+---
+- hosts: servers
+  tasks:
+  - debug:
+      msg: "Before we run our role"
+  - include_role:
+      name: mongodb
+  - debug:
+      msg: "After we run our role"

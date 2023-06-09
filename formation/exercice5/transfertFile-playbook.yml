@@ -1,0 +1,9 @@
+- hosts: servers
+  tasks:
+  - name: Deplacement d'un fichier vers la machine cible
+    copy:
+       src: /home/ubuntu/ansible/formation/exercice5/hello.txt
+       dest: /home/ubuntu/
+
+    become: yes
+         

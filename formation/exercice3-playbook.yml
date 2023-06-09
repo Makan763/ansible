@@ -1,0 +1,8 @@
+- hosts: servers
+  tasks:
+    - name: Remove the user 'rsergio'
+      ansible.builtin.user:
+        name: rsergio
+        state: absent
+        remove: yes
+      become: yes

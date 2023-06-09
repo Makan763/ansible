@@ -1,0 +1,5 @@
+---
+package_name: httpd
+package_version: latest
+config_dest_file: /etc/httpd/conf/httpd.conf
+

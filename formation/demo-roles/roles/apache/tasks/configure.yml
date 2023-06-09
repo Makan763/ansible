@@ -1,0 +1,7 @@
+---
+- name: Copy apache configuration file
+  copy:
+    src: "{{ package_name }}.conf"
+    dest: "{{ config_dest_file }}"
+    #notify:
+    #  - restart apache

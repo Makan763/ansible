@@ -1,0 +1,19 @@
+---
+- hosts: servers
+  # become: true
+  become_method: su
+  tasks:
+  - name: Display a message
+    debug: 
+     msg: "test"
+    tags: debug
+  - name: copy configuration
+    copy:
+     src: apache2.conf
+     dest: apache2.conf
+    tags: config
+  - name: Restart Apache
+    service:
+     name: apache2
+     state: restarted
+    tags: service

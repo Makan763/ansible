@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+    - name: Return testfile to registered var
+      command: "cat /tmp/testfile"
+      register: testfile
+
+    - name: display testfile content
+      command: "echo {{ testfile }}"

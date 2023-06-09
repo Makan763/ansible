@@ -1,0 +1,6 @@
+- hosts: servers
+  tasks:
+  - name: Add configuration file from template
+    template:
+      src: formation.conf.j2
+      dest: /tmp/formation.conf

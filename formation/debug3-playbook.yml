@@ -1,0 +1,6 @@
+- hosts: servers
+  tasks:
+  - name : Display all variables/facts know for a host
+    debug:
+       var: hostvars[inventory_hostname]
+       verbosity: 1

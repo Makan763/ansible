@@ -1,0 +1,6 @@
+- hosts: servers
+  tasks:
+    - name: affichage de la variable var
+      command: echo {{var}}
+        # vars:
+        #- var: value_playbook

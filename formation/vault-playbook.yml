@@ -1,0 +1,6 @@
+- hosts: servers
+  tasks:
+  - name: Use encrypted files with vault
+    copy:
+      src: server-secrets.yml
+      dest: /tmp/server-secrets.yml

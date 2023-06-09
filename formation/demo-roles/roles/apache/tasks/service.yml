@@ -1,0 +1,22 @@
+---
+- name: Enable apache 
+  become: yes
+  service:
+    name: "{{package_name}}"
+    enabled: yes
+    state: stopped
+  service:
+    name: "{{package_name}}"
+    state: started
+  service:
+    name: "{{package_name}}"
+    state: restarted
+  when: ansible_os_family == "Debian"
+
+- name: Enable httpd
+  become: yes
+  service:
+    name: "{{package_name}}"
+    enabled: yes
+    state: started
+  when: ansible_os_family == "RedHat"

@@ -1,0 +1,16 @@
+---
+- hosts: servers
+  tasks:
+    - name: Register loop output as a variable
+      shell:
+        cmd: "echo {{ item }}"
+      loop:
+        - "un"
+        - "deux"
+      register: numbers
+
+    - name: Fail if return code is not 0
+      ansible.builtin.fail:
+        msg: "The command ({{ item.cmd }}) dit not have return code"
+      when: item.rc != 0
+      loop: "{{ numbers.results }}"

@@ -1,0 +1,16 @@
+- hosts: servers
+  tasks:
+  - name: ensure apache is at the last version
+    apt:
+      name: apache2
+      state: latest
+  - name: Create document root
+    file:
+      path: "/var/www/my_domain"
+      state: directory
+      owner: "ubuntu"
+      mode: '0755'
+  - name: ensure apache is running
+    service:
+      name: apache2
+      state: started 

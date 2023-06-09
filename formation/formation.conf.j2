@@ -1,0 +1,4 @@
+host_name = {{ inventory_hostname }}
+local_ip = {{ ansible_default_ipv4["address"]}}
+gateway = {{ ansible_default_ipv4.gateway }}
+kernel_version = {{ ansible_kernel_version }}
